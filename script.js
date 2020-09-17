@@ -136,7 +136,7 @@ function displayResultsIndia(json) {
     // }
     // let displayAverage = document.createElement('p');
     // displayAverage.textContent = (averageDeaths);
-
+// working on averaging function to print out death percentage
     cardIndia.appendChild(paraOne);
     cardIndia.appendChild(paraTwo);
     cardIndia.appendChild(average);
