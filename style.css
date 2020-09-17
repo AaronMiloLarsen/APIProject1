@@ -2,9 +2,25 @@ body {
     margin: 5px;
     padding: 10px;
     background-color: thistle;
+    font-family: 'Overpass', sans-serif;
+    text-align: center;
 }
 
 .picture-container {
     display: flexbox;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    text-decoration: underline;
+}
+
+h4 {
+    text-align: center;
+}
+
+.card-img-top {
+    cursor: pointer;
 }
 
