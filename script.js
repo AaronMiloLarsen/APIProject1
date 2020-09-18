@@ -31,11 +31,6 @@ chinaFlag.addEventListener('click', requestChina);
 indiaFlag.addEventListener('click', requestIndia);
 usaFlag.addEventListener('click', requestUSA);
 
-//ADD TO ELEMENTS P TAGS TO DISPLAY RESULTS
-
-
-
-
 
 //MAIN CHINA DATA FUNCTION
 function requestChina() {
@@ -73,12 +68,33 @@ function displayResultsChina(json) {
 
     let paraOne = document.createElement('p');
     let paraTwo = document.createElement('p');
+    let average = document.createElement('button');
 
     paraOne.textContent = ('Total Confirmed: ' + chinaTotalCases);
     paraTwo.textContent = ('Total Deaths: ' + chinaTotalDeaths);
 
+    // AVERAGE DETAILS AND FUNCTION 
+    average.innerText = 'Death %'
+    average.style.fontSize = '2rem';
+    average.addEventListener('click', averageDeaths);
+
+    function averageDeaths() {
+        a = chinaTotalDeaths
+        b = chinaTotalCases
+        let averageDeaths = (a / b) * 100;
+        console.log(averageDeaths);
+        displayAverage.style.display = 'block';
+        return 'Mortality Rate is ' + Math.floor(averageDeaths) + '%';
+    }  
+
+    let displayAverage = document.createElement('p');
+    displayAverage.innerText = averageDeaths();
+    displayAverage.style.display = 'none';
+
     cardChina.appendChild(paraOne);
     cardChina.appendChild(paraTwo);
+    cardChina.appendChild(average);
+    cardChina.appendChild(displayAverage);
     
 }   
 
@@ -124,25 +140,30 @@ function displayResultsIndia(json) {
     paraOne.textContent = ('Total Confirmed: ' + indiaTotalCases);
     paraTwo.textContent = ('Total Deaths: ' + indiaTotalDeaths);
 
-    average.innerText = 'Death %'
+    // AVERAGE DETAILS AND FUNCTION 
+    average.innerText = 'Death %';
+    average.style.fontSize = '2rem';
     average.addEventListener('click', averageDeaths);
 
-    // function averageDeaths() {
-    //     a = indiaTotalDeaths
-    //     b = indiaTotalCases
-    //     let averageDeaths = (a / b) * 100;
-    //     console.log(averageDeaths);
-    //     return averageDeaths;
-    // }
-    // let displayAverage = document.createElement('p');
-    // displayAverage.textContent = (averageDeaths);
-// working on averaging function to print out death percentage
+    function averageDeaths() {
+        a = indiaTotalDeaths
+        b = indiaTotalCases
+        let averageDeaths = (a / b) * 100;
+        console.log(averageDeaths);
+        displayAverage.style.display = 'block';
+        return 'Mortality Rate is ' + Math.floor(averageDeaths) + '%';
+    }
+    
+    let displayAverage = document.createElement('p');
+    displayAverage.innerText = averageDeaths();
+    displayAverage.style.display = 'none';
+
     cardIndia.appendChild(paraOne);
     cardIndia.appendChild(paraTwo);
     cardIndia.appendChild(average);
+    cardIndia.appendChild(displayAverage);
 
 } 
-
 
 
 //MAIN USA DATA FUNCTION
@@ -181,11 +202,32 @@ function displayResultsUSA(json) {
 
     let paraOne = document.createElement('p');
     let paraTwo = document.createElement('p');
+    let average = document.createElement('button');
 
     paraOne.textContent = ('Total Confirmed: ' + usaTotalCases);
     paraTwo.textContent = ('Total Deaths: ' + usaTotalDeaths);
 
+     // AVERAGE DETAILS AND FUNCTION 
+     average.innerText = 'Death %'
+     average.style.fontSize = '2rem';
+     average.addEventListener('click', averageDeaths);
+ 
+     function averageDeaths() {
+         a = usaTotalDeaths
+         b = usaTotalCases
+         let averageDeaths = (a / b) * 100;
+         console.log(averageDeaths);
+         displayAverage.style.display = 'block';
+         return 'Mortality Rate is ' + Math.floor(averageDeaths) + '%';
+     }
+
+     let displayAverage = document.createElement('p');
+     displayAverage.innerText = averageDeaths();
+     displayAverage.style.display = 'none';
+
     cardUSA.appendChild(paraOne);
     cardUSA.appendChild(paraTwo);
-
+    cardUSA.appendChild(average);
+    cardUSA.appendChild(displayAverage);
+    
 }   

@@ -1,27 +1,57 @@
 body {
     margin: 5px;
     padding: 10px;
-    background-color: thistle;
+    background-image: url(assets/worldmap.jpg);
     font-family: 'Overpass', sans-serif;
     text-align: center;
 }
 
-.picture-container {
-    display: flexbox;
-}
-
 h1 {
     text-align: center;
-    color: black;
+    font-size: 4rem;
+    font-style: italic;
+    text-shadow: 2px 2px black;
+    color: rgb(30, 106, 246);
     text-decoration: underline;
+    padding-top: 30px;
 }
 
-h4 {
+h3 {
     text-align: center;
+    padding-top: 20px;
+}
+
+.card {
+    box-shadow: 0px 0px 10px 10px black;
+    margin-top: 15vh;
 }
 
 .card-img-top {
     cursor: pointer;
 }
 
+img:hover {
+    opacity: 65%;
+    background-image: cross-fade(0);
+}
+
+p {
+    font-size: 2rem;
+}
+
+button {
+    margin-bottom: 10px;
+}
+
+#china-header, #india-header, #usa-header {
+    text-decoration: underline;
+}
+
+.card-title {
+    text-decoration: underline;
+}
+
+.card-body-china, .card-body-india, .card-body-usa {
+    border: 5px solid black;
+}
 
